@@ -1,4 +1,5 @@
 from model_handler.arctic_handler import ArcticHandler
+from model_handler.cerebras_handler import CerebrasHandler
 from model_handler.claude_handler import ClaudeHandler
 from model_handler.cohere_handler import CohereHandler
 from model_handler.databricks_handler import DatabricksHandler
@@ -39,6 +40,8 @@ handler_map = {
     "gpt-4-0613": OpenAIHandler,
     "gpt-3.5-turbo-0125-FC": OpenAIHandler,
     "gpt-3.5-turbo-0125": OpenAIHandler,
+    "cerebras-llama3.1-8b": CerebrasHandler,
+    "cerebras-llama3.1-70b": CerebrasHandler,
     "claude-2.1": ClaudeHandler,
     "claude-instant-1.2": ClaudeHandler,
     "claude-3-opus-20240229": ClaudeHandler,
