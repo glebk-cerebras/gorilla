@@ -532,7 +532,19 @@ MODEL_METADATA_MAPPING = {
         "https://huggingface.co/Salesforce/xLAM-7b-fc-r",
         "Salesforce",
         "cc-by-nc-4.0",
-    ]
+    ],
+    "cerebras-llama3.1-8b": [
+        "Cerebras Inference Meta-Llama-3.1-8B-Instruct tools support",
+        "https://llama.meta.com/llama3",
+        "Meta",
+        "Meta Llama 3.1 Community",
+    ],
+    "cerebras-llama3.1-70b": [
+        "Cerebras Inference Meta-Llama-3.1-8B-Instruct tools support",
+        "https://llama.meta.com/llama3",
+        "Meta",
+        "Meta Llama 3.1 Community",
+    ],
 }
 
 INPUT_PRICE_PER_MILLION_TOKEN = {
