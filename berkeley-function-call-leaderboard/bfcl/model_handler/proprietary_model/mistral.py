@@ -20,7 +20,10 @@ class MistralHandler(BaseHandler):
         super().__init__(model_name, temperature)
         self.model_style = ModelStyle.Mistral
 
-        self.client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+        url = os.getenv("MISTRAL_URL")
+        print(f"Creating Mistral client with: {url=}")
+        self.client = Mistral(server_url=url, api_key=os.getenv("MISTRAL_API_KEY", "Cerebras!"))
+        #self.client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
 
     def decode_ast(self, result, language="Python"):
         if "FC" in self.model_name:
