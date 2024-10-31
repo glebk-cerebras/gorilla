@@ -54,6 +54,7 @@ api_inference_handler_map = {
     "open-mixtral-8x7b": MistralHandler,
     "mistral-large-2407": MistralHandler,
     "mistral-large-2407-FC": MistralHandler,
+    "mistral-large-instruct-2407-FC": MistralHandler,
     "mistral-medium-2312": MistralHandler,
     "mistral-small-2402": MistralHandler,
     "mistral-small-2402-FC": MistralHandler,

@@ -125,7 +125,7 @@ UNDERSCORE_TO_DOT = [
     "open-mistral-nemo-2407-FC",
     "open-mixtral-8x22b-FC",
     "mistral-large-2407-FC",
-    "mistral-large-2407-FC",
+    "mistral-large-instruct-2407-FC",
     "mistral-small-2402-FC",
     "mistral-small-2402-FC",
     "gemini-1.5-pro-002-FC",

@@ -13,14 +13,14 @@ from bfcl.model_handler.utils import (
     system_prompt_pre_processing_chat_model,
 )
 from mistralai import Mistral
-
+from cerebras.cloud.sdk import Cerebras
 
 class MistralHandler(BaseHandler):
     def __init__(self, model_name, temperature) -> None:
         super().__init__(model_name, temperature)
         self.model_style = ModelStyle.Mistral
 
-        self.client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+        self.client = Cerebras(api_key=os.getenv("CEREBRAS_API_KEY"))
 
     def decode_ast(self, result, language="Python"):
         if "FC" in self.model_name:
@@ -66,7 +66,7 @@ class MistralHandler(BaseHandler):
             "tools": tool,
         }
 
-        api_response = self.client.chat.complete(
+        api_response = self.client.chat.completions.create(
             model=self.model_name.replace("-FC", ""),
             messages=message,
             tools=tool,
@@ -159,7 +159,7 @@ class MistralHandler(BaseHandler):
         message = inference_data["message"]
         inference_data["inference_input_log"] = {"message": message}
 
-        api_response = self.client.chat.complete(
+        api_response = self.client.chat.completions.create(
             model=self.model_name,
             messages=message,
             temperature=self.temperature,
